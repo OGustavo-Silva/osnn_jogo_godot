@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/pacoteCenas/cat.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/pacoteCenas/ground.tscn" type="PackedScene" id=2]
+
+[node name="game" type="Node2D"]
+
+[node name="cat" parent="." instance=ExtResource( 1 )]
+position = Vector2( 340.323, 144.326 )
+
+[node name="grounds" type="Node2D" parent="."]
+
+[node name="ground" parent="grounds" instance=ExtResource( 2 )]
+position = Vector2( 345.669, 637.883 )
+
+[node name="ground2" parent="grounds" instance=ExtResource( 2 )]
+position = Vector2( 691.337, 710.937 )
