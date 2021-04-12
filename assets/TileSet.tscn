@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/sprites/chao(1).png" type="Texture" id=1]
+[ext_resource path="res://assets/sprites/chao(3).png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/chao(0).png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 29.4299, 16.9929 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="tile000" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 60, 40 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="static" type="StaticBody2D" parent="tile000"]
+
+[node name="colisao" type="CollisionShape2D" parent="tile000/static"]
+shape = SubResource( 1 )
+
+[node name="tile001" type="Sprite" parent="."]
+position = Vector2( 61.1149, 1.5874 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 60, 40 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="static" type="StaticBody2D" parent="tile001"]
+
+[node name="colisao" type="CollisionShape2D" parent="tile001/static"]
+shape = SubResource( 1 )
+
+[node name="tile002" type="Sprite" parent="."]
+position = Vector2( 123.024, 1.5874 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 60, 40 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="static" type="StaticBody2D" parent="tile002"]
+
+[node name="colisao" type="CollisionShape2D" parent="tile002/static"]
+shape = SubResource( 1 )
