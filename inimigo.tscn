@@ -34,3 +34,13 @@ position = Vector2( -1.94454, 3.0052 )
 frames = SubResource( 2 )
 animation = "correndo"
 frame = 3
+
+[node name="DetectorParedeEsq" type="RayCast2D" parent="."]
+position = Vector2( -16, -9 )
+scale = Vector2( 1, 0.52 )
+enabled = true
+
+[node name="DetectorParedeDir" type="RayCast2D" parent="."]
+position = Vector2( 21.5, -10 )
+scale = Vector2( 1, 0.54 )
+enabled = true

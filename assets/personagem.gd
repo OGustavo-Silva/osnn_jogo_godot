@@ -1,33 +1,32 @@
 extends KinematicBody2D
 
 const UP = Vector2(0, -1)
-var motion = Vector2()
-const GRAVIDADE = 30
-const SPEED = 600
-const JUMP_HEIGHT = -550
+var movimento = Vector2()
+const VELOCIDADE = 600
 var atacando = false;
 var vida = 3
 
 
 func _process(delta):
-	motion.y += GRAVIDADE
+	movimento.y += ScriptGlobal.GRAVIDADE
 	
 	if Input.is_action_pressed("ui_right"):
-		motion.x = SPEED
+		movimento.x = VELOCIDADE
+		scale.x = scale.y * 1 #Para flipar todo personagem
 		$sprite.play("correr")
-		#para flipar viraro personagemao outro lado
-		$sprite.flip_h = false
+
 	elif Input.is_action_pressed("ui_left"):
-		motion.x = -SPEED
+		movimento.x = -VELOCIDADE
+		scale.x = scale.y * -1
 		$sprite.play("correr")
-		$sprite.flip_h = true
+		
 	else:
-		motion.x = 0
+		movimento.x = 0
 		$sprite.play("parado")
 		
 	if is_on_floor():
 		if Input.is_action_pressed("ui_up"):
-			motion.y = JUMP_HEIGHT
+			movimento.y = ScriptGlobal.ALTURA_PULO
 			
 		if Input.is_action_pressed("atacar"):
 			$sprite.play("ataque")
@@ -40,7 +39,7 @@ func _process(delta):
 	else:
 		$sprite.play("pular")
 	
-	motion = move_and_slide(motion, UP)
+	movimento = move_and_slide(movimento, UP)
 
 
 func _on_sprite_animation_finished():
