@@ -1,0 +1,48 @@
+[gd_scene format=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 282.0
+margin_top = 156.0
+margin_right = 686.0
+margin_bottom = 420.0
+color = Color( 0.0705882, 0.0588235, 0.0862745, 0.482353 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="email" type="LineEdit" parent="ColorRect"]
+margin_left = 171.633
+margin_top = 51.9137
+margin_right = 229.633
+margin_bottom = 75.9137
+
+[node name="senha" type="LineEdit" parent="ColorRect"]
+margin_left = 176.93
+margin_top = 114.422
+margin_right = 234.93
+margin_bottom = 138.422
+
+[node name="labelEmail" type="RichTextLabel" parent="ColorRect"]
+margin_left = 94.2922
+margin_top = 41.3191
+margin_right = 134.292
+margin_bottom = 81.3191
+text = "email"
+
+[node name="labelSenha" type="RichTextLabel" parent="ColorRect"]
+margin_left = 98.5301
+margin_top = 111.244
+margin_right = 138.53
+margin_bottom = 151.244
+text = "senha"
+
+[node name="entrar" type="Button" parent="ColorRect"]
+margin_left = 171.633
+margin_top = 201.298
+margin_right = 183.633
+margin_bottom = 221.298
+text = "entrar"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
