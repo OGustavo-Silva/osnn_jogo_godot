@@ -17,11 +17,10 @@ func _process(delta):
 	#movimento.x -= velocidade
 	
 	if $DetectorParedeEsq.is_colliding():
-		print("batendo esq")
 		movimento.x *= -1
 		$sprite.flip_h = true
 	elif $DetectorParedeDir.is_colliding():
-		print("batendo dir")
+		print(ScriptGlobal.nome_usuario)
 		movimento.x *= -1
 		$sprite.flip_h = false
 		

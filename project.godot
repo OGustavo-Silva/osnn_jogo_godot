@@ -39,7 +39,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Projeto-felipe(meu Teste)"
-run/main_scene="res://assets/mundo.tscn"
+run/main_scene="res://cena_login.tscn"
 config/icon="res://icon.png"
 
 [autoload]
