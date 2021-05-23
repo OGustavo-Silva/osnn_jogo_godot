@@ -24,9 +24,11 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 	if (json.result.size()>0):
 		ScriptGlobal.id_usuario = json.result["id"]
 		ScriptGlobal.nome_usuario = json.result["nome"]
-		print(ScriptGlobal.nome_usuario)
 		ScriptGlobal.melhor_pontuacao =  json.result["pontuacao"]
-		get_tree().change_scene("res://assets/mundo.tscn")
+		ScriptGlobal.ult_fase = json.result["ult_fase"]
+		ScriptGlobal.data_criacao = json.result["data_criacao"]
+		ScriptGlobal.data_atualiza = json.result["data_atualiza"]
+		get_tree().change_scene("res://assets/cena_menu.tscn")
 	else:
 		#$AnimationPlayer.play("falha")
 		pass

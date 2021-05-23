@@ -20,10 +20,7 @@ func _process(delta):
 		movimento.x *= -1
 		$sprite.flip_h = true
 	elif $DetectorParedeDir.is_colliding():
-		print(ScriptGlobal.nome_usuario)
 		movimento.x *= -1
 		$sprite.flip_h = false
-		
-		
 	
 	movimento.y = move_and_slide(movimento, UP).y
