@@ -19,7 +19,6 @@ func enviar_requisicao_POST():
 
 
 func _on_HTTPRequest_request_completed(result, response_code, headers, body):
-	print(body)
 	var json = JSON.parse(body.get_string_from_utf8())
 	if (json.result.size()>0):
 		ScriptGlobal.id_usuario = json.result["id"]

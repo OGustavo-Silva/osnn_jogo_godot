@@ -7,7 +7,7 @@
 [ext_resource path="res://inimigo.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 11.8891, 17.4614 )
+extents = Vector2( 9.53007, 16.7864 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {

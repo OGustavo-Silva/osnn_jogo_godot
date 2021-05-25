@@ -4,7 +4,6 @@ const UP = Vector2(0, -1)
 var movimento = Vector2()
 const VELOCIDADE = 600
 var atacando = false;
-var vida = 3
 
 
 func _process(delta):
@@ -30,7 +29,6 @@ func _process(delta):
 			
 		if Input.is_action_pressed("atacar"):
 			$sprite.play("ataque")
-			#print("ataque!")
 			$atack/CollisionShape2D.disabled = false
 			atacando = true
 		elif !Input.is_action_just_pressed("atacar"):
@@ -54,10 +52,6 @@ func _on_atack_body_entered(body):
 
 
 func _on_dano_body_entered(body):
-	
-	
-	print(body)
-	print(vida)
-	if vida == 0:
+	if ScriptGlobal.vida == 0:
 		$".".queue_free();
 		
