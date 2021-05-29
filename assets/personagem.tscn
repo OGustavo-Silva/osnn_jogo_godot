@@ -43,11 +43,6 @@ extents = Vector2( 6.00169, 14.0439 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 22 ), ExtResource( 9 ), ExtResource( 6 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 15 ), ExtResource( 21 ), ExtResource( 18 ), ExtResource( 8 ), ExtResource( 14 ), ExtResource( 2 ), ExtResource( 23 ), ExtResource( 19 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 20 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "parado",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 25 ) ],
 "loop": true,
 "name": "pular",
@@ -58,15 +53,20 @@ animations = [ {
 "name": "ataque",
 "speed": 20.0
 }, {
-"frames": [ ExtResource( 35 ) ],
+"frames": [ ExtResource( 22 ), ExtResource( 9 ), ExtResource( 6 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 15 ), ExtResource( 21 ), ExtResource( 18 ), ExtResource( 8 ), ExtResource( 14 ), ExtResource( 2 ), ExtResource( 23 ), ExtResource( 19 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 20 ), ExtResource( 7 ) ],
 "loop": true,
-"name": "agachar",
-"speed": 5.0
+"name": "parado",
+"speed": 8.0
 }, {
 "frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 24 ) ],
 "loop": true,
 "name": "correr",
 "speed": 20.0
+}, {
+"frames": [ ExtResource( 35 ) ],
+"loop": true,
+"name": "agachar",
+"speed": 5.0
 } ]
 
 [sub_resource type="Animation" id=3]
@@ -136,7 +136,6 @@ disabled = true
 position = Vector2( -0.0102844, -0.56582 )
 scale = Vector2( 0.5, 0.5 )
 collision_layer = 2
-collision_mask = 4
 
 [node name="colisao" type="CollisionShape2D" parent="personagem/dano"]
 light_mask = 4

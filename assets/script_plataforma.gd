@@ -25,3 +25,4 @@ func _process(delta):
 		$Path2D/PathFollow2D.unit_offset += velocidade * delta
 	else:
 		$Path2D/PathFollow2D.unit_offset -= velocidade * delta
+

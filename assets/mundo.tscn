@@ -117,6 +117,7 @@ extents = Vector2( 2605.18, 12.0239 )
 extents = Vector2( 0.507629, 79.3163 )
 
 [node name="mundo" type="Node2D"]
+position = Vector2( 0, -1 )
 script = ExtResource( 5 )
 
 [node name="TileMap" type="TileMap" parent="."]
