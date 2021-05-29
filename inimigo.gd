@@ -6,7 +6,7 @@ var posicao_final = true
 var velocidade = 80
 const UP = Vector2(0, -1)
 var movimento = Vector2.ZERO
-var vida = 3
+var vida = 2
 
 func _ready():
 	$sprite.play("andar")

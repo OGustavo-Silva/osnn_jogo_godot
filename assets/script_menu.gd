@@ -10,15 +10,15 @@ func _ready():
 func _process(delta):
 	#Verifica fase selecionada e altera cor de color rect
 	if (fase_selec == 1):
-		$"Fundo/Fase 1/color_fase1".color = Color(0,1,1,1)
-		$"Fundo/Fase 2/color_fase2".color = Color(1,1,1,1)
+		$"Fundo/Fase 1/color_fase1".color = Color(1,0,0,0.65)
+		$"Fundo/Fase 2/color_fase2".color = Color(0.24,0.23,0.23,0.65)
 	elif(fase_selec == 2):
-		$"Fundo/Fase 2/color_fase2".color = Color(0,1,1,1)
-		$"Fundo/Fase 3/color_fase3".color = Color(1,1,1,1)
-		$"Fundo/Fase 1/color_fase1".color = Color(1,1,1,1)
+		$"Fundo/Fase 2/color_fase2".color = Color(1,0,0,0.65)
+		$"Fundo/Fase 3/color_fase3".color = Color(0.24,0.23,0.23,0.65)
+		$"Fundo/Fase 1/color_fase1".color = Color(0.24,0.23,0.23,0.65)
 	elif(fase_selec == 3):
-		$"Fundo/Fase 3/color_fase3".color = Color(0,1,1,1)
-		$"Fundo/Fase 2/color_fase2".color = Color(1,1,1,1)
+		$"Fundo/Fase 3/color_fase3".color = Color(1,0,0,0.65)
+		$"Fundo/Fase 2/color_fase2".color = Color(0.24,0.23,0.23,0.65)
 		
 	if(Input.is_action_just_pressed("ui_right") and fase_selec < 3):
 		fase_selec += 1

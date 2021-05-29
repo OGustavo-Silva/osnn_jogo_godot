@@ -39,8 +39,10 @@ frame = 3
 position = Vector2( -19.25, -9 )
 scale = Vector2( 1, 0.48 )
 enabled = true
+collision_mask = 9
 
 [node name="DetectorParedeDir" type="RayCast2D" parent="."]
 position = Vector2( 22.75, -10 )
 scale = Vector2( 1, 0.505522 )
 enabled = true
+collision_mask = 9
