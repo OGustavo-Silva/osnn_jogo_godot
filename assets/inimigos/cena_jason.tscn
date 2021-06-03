@@ -31,14 +31,14 @@ script = ExtResource( 4 )
 [node name="DetectorParedeEsq" type="RayCast2D" parent="inimigo"]
 position = Vector2( -14.3957, -17.0266 )
 rotation = 0.019592
-scale = Vector2( 1, 0.8 )
+scale = Vector2( 1.27916, 0.841559 )
 enabled = true
 collision_mask = 9
 
 [node name="DetectorParedeDir" type="RayCast2D" parent="inimigo"]
 position = Vector2( 29.7036, -17.0266 )
 rotation = -0.0078477
-scale = Vector2( 1, 0.8 )
+scale = Vector2( 1.12, 0.839999 )
 enabled = true
 collision_mask = 9
 

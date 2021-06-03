@@ -1,0 +1,120 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/script_fase_concluida.gd" type="Script" id=1]
+[ext_resource path="res://Roboto/Roboto-Black.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://arte_principal.jpg" type="Texture" id=3]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Roboto/Roboto-Black.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 48
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 25
+font_data = ExtResource( 2 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="imagem_fundo" type="Sprite" parent="."]
+position = Vector2( 511.917, 299.828 )
+scale = Vector2( 1.27826, 1.32604 )
+texture = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 14.0
+margin_top = 13.0
+margin_right = 1010.0
+margin_bottom = 584.0
+color = Color( 0.0705882, 0.0588235, 0.0862745, 0.756863 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect"]
+margin_left = 353.496
+margin_top = 39.8252
+margin_right = 690.496
+margin_bottom = 98.8252
+custom_fonts/normal_font = SubResource( 2 )
+text = "Fase concluida"
+
+[node name="txt_pontuacao" type="RichTextLabel" parent="ColorRect"]
+margin_left = 86.9858
+margin_top = 142.854
+margin_right = 234.986
+margin_bottom = 181.854
+custom_fonts/normal_font = SubResource( 3 )
+text = "Pontuação:"
+
+[node name="pontuacao" type="RichTextLabel" parent="ColorRect"]
+margin_left = 231.439
+margin_top = 142.854
+margin_right = 379.439
+margin_bottom = 181.854
+custom_fonts/normal_font = SubResource( 3 )
+text = "0"
+
+[node name="txt_tempo" type="RichTextLabel" parent="ColorRect"]
+margin_left = 86.9858
+margin_top = 198.413
+margin_right = 234.986
+margin_bottom = 237.413
+custom_fonts/normal_font = SubResource( 3 )
+text = "Tempo:"
+
+[node name="tempo" type="RichTextLabel" parent="ColorRect"]
+margin_left = 209.216
+margin_top = 198.413
+margin_right = 357.216
+margin_bottom = 237.413
+custom_fonts/normal_font = SubResource( 3 )
+text = "0"
+
+[node name="txt_inimigos" type="RichTextLabel" parent="ColorRect"]
+margin_left = 87.0
+margin_top = 252.0
+margin_right = 365.0
+margin_bottom = 301.0
+custom_fonts/normal_font = SubResource( 3 )
+text = "Inimigos eliminados:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="inimigos" type="RichTextLabel" parent="ColorRect"]
+margin_left = 333.047
+margin_top = 252.0
+margin_right = 611.047
+margin_bottom = 301.0
+custom_fonts/normal_font = SubResource( 3 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn_proxima" type="Button" parent="ColorRect"]
+margin_left = 646.0
+margin_top = 403.0
+margin_right = 766.0
+margin_bottom = 444.0
+text = "Próxima fase"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn_menu" type="Button" parent="ColorRect"]
+margin_left = 209.287
+margin_top = 401.874
+margin_right = 290.287
+margin_bottom = 442.874
+text = "Menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+[connection signal="pressed" from="ColorRect/btn_proxima" to="." method="_on_btn_proxima_pressed"]
+[connection signal="pressed" from="ColorRect/btn_menu" to="." method="_on_btn_menu_pressed"]

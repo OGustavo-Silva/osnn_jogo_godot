@@ -66,4 +66,6 @@ func dano():
 	else:
 		position.x = position.x + 30
 	if vida <1:
+		ScriptGlobal.pontuacao_inimigo += 20
+		ScriptGlobal.inimigos_eliminados += 1
 		queue_free()

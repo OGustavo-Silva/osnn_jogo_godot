@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://assets/sprites/chao(0).png" type="Texture" id=1]
 [ext_resource path="res://assets/personagem.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://assets/script_mundo.gd" type="Script" id=5]
 [ext_resource path="res://assets/inimigos/cena_jason.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/cena_plataforma.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/background.png" type="Texture" id=8]
 [ext_resource path="res://assets/sprites/chao(1).png" type="Texture" id=22]
 [ext_resource path="res://assets/sprites/chao(2).png" type="Texture" id=23]
 [ext_resource path="res://assets/sprites/chao(3).png" type="Texture" id=24]
@@ -120,12 +121,29 @@ extents = Vector2( 0.507629, 79.3163 )
 position = Vector2( 0, -1 )
 script = ExtResource( 5 )
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -101
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+margin_left = 3.0
+margin_top = 3.0
+margin_right = 1022.0
+margin_bottom = 601.0
+texture = ExtResource( 8 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HUD" parent="." instance=ExtResource( 4 )]
+position = Vector2( 62.0542, 193.403 )
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 5 )
 cell_size = Vector2( 60, 40 )
 collision_mask = 6
 format = 1
-tile_data = PoolIntArray( 327680, 2, 0, 720897, 2, 0, 720904, 4, 0, 720908, 4, 0, 720909, 4, 0, 720934, 0, 0, 786432, 0, 0, 786433, 0, 0, 786434, 0, 0, 786435, 0, 0, 786436, 1, 0, 786437, 1, 0, 786438, 1, 0, 786439, 0, 0, 786441, 0, 0, 786442, 3, 0, 786443, 3, 0, 786446, 3, 0, 786447, 3, 0, 786448, 3, 0, 786449, 3, 0, 786455, 4, 0, 786459, 4, 0, 786467, 0, 0, 786468, 0, 0, 786469, 0, 0, 786471, 0, 0, 786472, 0, 0, 786473, 0, 0, 786474, 0, 0, 786475, 0, 0, 786476, 0, 0, 851986, 0, 0, 851987, 0, 0, 851988, 0, 0, 851989, 0, 0, 851990, 0, 0, 851992, 1, 0, 851993, 1, 0, 851994, 0, 0 )
+tile_data = PoolIntArray( 327680, 2, 0, 720896, 0, 0, 720897, 2, 0, 720904, 4, 0, 720908, 4, 0, 720909, 4, 0, 720934, 0, 0, 786432, 0, 0, 786433, 0, 0, 786434, 0, 0, 786435, 0, 0, 786436, 1, 0, 786437, 1, 0, 786438, 1, 0, 786439, 0, 0, 786441, 0, 0, 786442, 3, 0, 786443, 3, 0, 786446, 3, 0, 786447, 3, 0, 786448, 3, 0, 786449, 3, 0, 786455, 4, 0, 786459, 4, 0, 786467, 0, 0, 786468, 0, 0, 786469, 0, 0, 786471, 0, 0, 786472, 0, 0, 786473, 0, 0, 786474, 0, 0, 786475, 0, 0, 786476, 0, 0, 851986, 0, 0, 851987, 0, 0, 851988, 0, 0, 851989, 0, 0, 851990, 0, 0, 851992, 1, 0, 851993, 1, 0, 851994, 0, 0 )
 
 [node name="inimigo" parent="." instance=ExtResource( 29 )]
 position = Vector2( 696.05, 434.742 )
@@ -141,9 +159,6 @@ position = Vector2( 442.356, 418.815 )
 [node name="portal" parent="." instance=ExtResource( 3 )]
 position = Vector2( 2786.39, 488.565 )
 cenas = "res://assets/fase2.tscn"
-
-[node name="HUD" parent="." instance=ExtResource( 4 )]
-position = Vector2( 62.0542, 193.403 )
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( 1589.58, 1046.52 )

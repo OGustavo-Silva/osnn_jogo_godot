@@ -16,5 +16,4 @@ export(String, FILE, "*.tscn") var cenas
 
 
 func _on_portal_body_entered(body):
-	get_tree().change_scene(cenas)
-	 # Replace with function body.
+	get_tree().change_scene("res://assets/cena_fase_concluida.tscn")

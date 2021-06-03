@@ -12,11 +12,18 @@ func _process(delta):
 		movimento.x = VELOCIDADE
 		scale.x = scale.y * 1 #Para flipar todo personagem
 		$sprite.play("correr")
+		$atack/CollisionShape2D.disabled = true
 
 	elif Input.is_action_pressed("ui_left"):
 		movimento.x = -VELOCIDADE
 		scale.x = scale.y * -1
 		$sprite.play("correr")
+		$atack/CollisionShape2D.disabled = true
+		
+	#Impede que resete o frame a cada frame( resolve o problema de ficar apenas no frame 1 quando ataca)
+	elif($sprite.is_playing() and ($sprite.animation == "ataque_basico" or $sprite.animation=="ataque")):
+		$atack/CollisionShape2D.disabled = false
+		atacando = true
 		
 	else:
 		movimento.x = 0
@@ -24,25 +31,34 @@ func _process(delta):
 		
 	if is_on_floor():
 		if Input.is_action_pressed("ui_up"):
+			$atack/CollisionShape2D.disabled = true
 			movimento.y = ScriptGlobal.ALTURA_PULO
 	else:
 		$sprite.play("pular")
 		
-	if Input.is_action_pressed("atacar"):
-			$sprite.play("ataque_forte")
+	#Ataque rapido
+	if Input.is_action_just_pressed("atacar"):
+			$sprite.play("ataque_basico")
 			$atack/CollisionShape2D.disabled = false
 			atacando = true
-	elif !Input.is_action_just_pressed("atacar"):
-		$atack/CollisionShape2D.disabled = true
-	
+			$sprite.animation = "ataque_basico"#usado para impedir o problema de rodar apenas o frame 1 da animacao(ver comeco do codigo)
+			
+	#Ataque longo
+	if Input.is_action_just_pressed("atacar2"):
+		$sprite.play("ataque")
+		$atack/CollisionShape2D.disabled = false
+		atacando = true
+		$sprite.animation = "ataque"#usado para impedir o problema de rodar apenas o frame 1 da animacao(ver comeco do codigo)
+		
 	movimento = move_and_slide(movimento, UP)
 
 
 func _on_sprite_animation_finished():
-	if $sprite.animation == "Slash":
-		$atack/CollisionShape2D.disabled = false;
-		atacando = false
-		 # Replace with function body.
+	$sprite.play("parado")
+	movimento.x = 0
+	$atack/CollisionShape2D.disabled = true
+	atacando = false
+	 # Replace with function body.
 
 
 func _on_atack_body_entered(body):

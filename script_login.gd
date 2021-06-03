@@ -24,6 +24,8 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 		ScriptGlobal.id_usuario = json.result["id"]
 		ScriptGlobal.nome_usuario = json.result["nome"]
 		ScriptGlobal.melhor_pontuacao =  json.result["pontuacao"]
+		ScriptGlobal.melhor_pontuacao_2 =  json.result["pontuacao_2"]
+		ScriptGlobal.melhor_pontuacao_3 =  json.result["pontuacao_3"]
 		ScriptGlobal.ult_fase = json.result["ult_fase"]
 		ScriptGlobal.data_criacao = json.result["data_criacao"]
 		ScriptGlobal.data_atualiza = json.result["data_atualiza"]

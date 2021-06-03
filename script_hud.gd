@@ -10,6 +10,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$ParallaxBackground/txt_tempo.text = "%02d" % tempo #str(tempo)
+	ScriptGlobal.pontuacao_tempo_fase = int($ParallaxBackground/txt_tempo.text)
+	$ParallaxBackground/txt_pontuacao.text = str(ScriptGlobal.pontuacao_inimigo)
 
 
 func incrementa_tempo():

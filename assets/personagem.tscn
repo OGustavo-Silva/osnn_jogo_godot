@@ -66,12 +66,12 @@ animations = [ {
 "frames": [ ExtResource( 33 ), ExtResource( 30 ), ExtResource( 36 ), ExtResource( 29 ), ExtResource( 31 ), ExtResource( 26 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 37 ), ExtResource( 28 ), ExtResource( 27 ) ],
 "loop": false,
 "name": "ataque",
-"speed": 20.0
+"speed": 40.0
 }, {
-"frames": [ ExtResource( 30 ), ExtResource( 36 ), ExtResource( 29 ), ExtResource( 31 ), ExtResource( 26 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 28 ), ExtResource( 37 ), ExtResource( 27 ) ],
+"frames": [ ExtResource( 35 ), ExtResource( 33 ) ],
 "loop": true,
-"name": "ataque_forte",
-"speed": 25.0
+"name": "ataque_basico",
+"speed": 40.0
 } ]
 
 [sub_resource type="Animation" id=3]
@@ -115,8 +115,7 @@ shape = SubResource( 1 )
 [node name="sprite" type="AnimatedSprite" parent="personagem"]
 scale = Vector2( -1, 1 )
 frames = SubResource( 2 )
-animation = "ataque_forte"
-frame = 2
+animation = "ataque_basico"
 speed_scale = 0.3
 
 [node name="Camera2D" type="Camera2D" parent="personagem"]
@@ -146,6 +145,9 @@ collision_layer = 2
 light_mask = 4
 position = Vector2( -10.4984, 8.29043 )
 shape = SubResource( 6 )
+
+[node name="Timer" type="Timer" parent="personagem"]
+wait_time = 0.3
 [connection signal="animation_finished" from="personagem/sprite" to="personagem" method="_on_sprite_animation_finished"]
 [connection signal="body_entered" from="personagem/atack" to="personagem" method="_on_atack_body_entered"]
 [connection signal="body_entered" from="personagem/dano" to="personagem" method="_on_dano_body_entered"]
