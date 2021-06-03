@@ -28,6 +28,15 @@ func _process(delta):
 
 
 func iniciar_jogo():
-	ScriptGlobal.fase = fase_selec
+	if(int(fase_selec) == 1):
+		get_tree().change_scene("res://assets/mundo.tscn")
+	elif(int(fase_selec) == 2 and int(ScriptGlobal.ult_fase) > 1):
+		get_tree().change_scene("res://assets/fase2.tscn")
+	elif(int(fase_selec) == 3 and int(ScriptGlobal.ult_fase) > 2):
+		pass
+		#get_tree().change_scene("res://ass")
 	
-	get_tree().change_scene("res://assets/mundo.tscn")
+
+
+func _on_Ranking_pressed():
+	get_tree().change_scene("res://assets/cena_ranking.tscn")

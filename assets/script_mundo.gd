@@ -11,4 +11,5 @@ func _ready():
 
 
 func _on_Area2D_body_entered(body):
+	ScriptGlobal.vida = 0
 	body.queue_free()

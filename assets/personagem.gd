@@ -5,7 +5,6 @@ var movimento = Vector2()
 const VELOCIDADE = 600
 var atacando = false;
 
-
 func _process(delta):
 	movimento.y += ScriptGlobal.GRAVIDADE
 	
@@ -26,16 +25,15 @@ func _process(delta):
 	if is_on_floor():
 		if Input.is_action_pressed("ui_up"):
 			movimento.y = ScriptGlobal.ALTURA_PULO
-			
-		if Input.is_action_pressed("atacar"):
-			$sprite.play("ataque")
-			$atack/CollisionShape2D.disabled = false
-			atacando = true
-		elif !Input.is_action_just_pressed("atacar"):
-			$atack/CollisionShape2D.disabled = true
-		
 	else:
 		$sprite.play("pular")
+		
+	if Input.is_action_pressed("atacar"):
+			$sprite.play("ataque_forte")
+			$atack/CollisionShape2D.disabled = false
+			atacando = true
+	elif !Input.is_action_just_pressed("atacar"):
+		$atack/CollisionShape2D.disabled = true
 	
 	movimento = move_and_slide(movimento, UP)
 

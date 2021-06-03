@@ -1,0 +1,84 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/script_ranking.gd" type="Script" id=1]
+[ext_resource path="res://arte_principal.jpg" type="Texture" id=2]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="imagem_fundo" type="Sprite" parent="."]
+position = Vector2( 511.917, 299.828 )
+scale = Vector2( 1.27826, 1.32604 )
+texture = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 8.0
+margin_top = 10.0
+margin_right = 1013.0
+margin_bottom = 591.0
+color = Color( 0.0705882, 0.0588235, 0.0862745, 0.756863 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemList" type="ItemList" parent="ColorRect"]
+margin_left = 289.812
+margin_top = 248.136
+margin_right = 693.812
+margin_bottom = 515.136
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 113.593
+margin_top = 157.735
+margin_right = 240.593
+margin_bottom = 192.734
+text = "Fase 1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 446.81
+margin_top = 158.924
+margin_right = 573.81
+margin_bottom = 193.924
+text = "Fase 2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="voltar" type="Button" parent="."]
+margin_left = 446.81
+margin_top = 540.331
+margin_right = 573.81
+margin_bottom = 575.33
+text = "Voltar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="."]
+margin_left = 767.557
+margin_top = 160.113
+margin_right = 894.557
+margin_bottom = 195.113
+text = "Fase 3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="HTTPRequest2" type="HTTPRequest" parent="."]
+
+[node name="HTTPRequest3" type="HTTPRequest" parent="."]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="voltar" to="." method="_on_voltar_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_Button3_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
+[connection signal="request_completed" from="HTTPRequest2" to="." method="_on_HTTPRequest2_request_completed"]
+[connection signal="request_completed" from="HTTPRequest3" to="." method="_on_HTTPRequest3_request_completed"]

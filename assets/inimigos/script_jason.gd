@@ -58,3 +58,12 @@ func _process(delta):
 			$AnimatedSprite.flip_h = true
 	
 	movimento.y = move_and_slide(movimento, UP).y
+	
+func dano():
+	vida -=1
+	if(movimento.x > 0):
+		position.x = position.x - 30
+	else:
+		position.x = position.x + 30
+	if vida <1:
+		queue_free()

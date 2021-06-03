@@ -27,7 +27,10 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 		ScriptGlobal.ult_fase = json.result["ult_fase"]
 		ScriptGlobal.data_criacao = json.result["data_criacao"]
 		ScriptGlobal.data_atualiza = json.result["data_atualiza"]
+		print(ScriptGlobal.id_usuario)
+		print(ScriptGlobal.nome_usuario)
+		print(ScriptGlobal.data_criacao)
 		get_tree().change_scene("res://assets/cena_menu.tscn")
 	else:
-		#$AnimationPlayer.play("falha")
-		pass
+		$AnimationPlayer.play("falha")
+		

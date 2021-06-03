@@ -36,13 +36,13 @@ animation = "correndo"
 frame = 3
 
 [node name="DetectorParedeEsq" type="RayCast2D" parent="."]
-position = Vector2( -19.25, -9 )
+position = Vector2( -14.25, -7 )
 scale = Vector2( 1, 0.48 )
 enabled = true
 collision_mask = 9
 
 [node name="DetectorParedeDir" type="RayCast2D" parent="."]
-position = Vector2( 22.75, -10 )
+position = Vector2( 16.25, -7.25 )
 scale = Vector2( 1, 0.505522 )
 enabled = true
 collision_mask = 9

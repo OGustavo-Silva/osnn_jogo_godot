@@ -28,7 +28,7 @@ func _process(delta):
 	
 func dano():
 	vida -=1
-	if $sprite.flip_h:
+	if(movimento.x > 0):
 		position.x = position.x - 30
 	else:
 		position.x = position.x + 30

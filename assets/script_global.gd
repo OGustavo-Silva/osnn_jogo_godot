@@ -3,6 +3,8 @@ extends Node
 var site = "http://osnngodot.freevar.com"
 var url_login     = site + "/bd/dao/autenticar.php?"
 var url_ranking   = site + "/bd/dao/jogo_ranking.php?"
+var url_ranking_2   = site + "/bd/dao/jogo_ranking_2.php?"
+var url_ranking_3   = site + "/bd/dao/jogo_ranking_3.php?"
 
 var id_usuario = 0
 var nome_usuario = ""

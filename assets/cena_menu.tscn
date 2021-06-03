@@ -114,7 +114,18 @@ text = "INICIAR"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Ranking" type="Button" parent="."]
+margin_left = 464.005
+margin_top = 240.935
+margin_right = 563.005
+margin_bottom = 282.935
+text = "RANKING"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="input_event" from="Fundo/Fase 1" to="." method="selec_fase1"]
 [connection signal="input_event" from="Fundo/Fase 2" to="." method="selec_fase2"]
 [connection signal="input_event" from="Fundo/Fase 3" to="." method="selec_fase3"]
 [connection signal="pressed" from="Iniciar" to="." method="iniciar_jogo"]
+[connection signal="pressed" from="Ranking" to="." method="_on_Ranking_pressed"]
